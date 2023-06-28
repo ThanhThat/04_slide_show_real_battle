@@ -1,0 +1,105 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background-color: #dadada;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.slide-show {
+  position: relative;
+  width: 80%;
+  margin: 4rem auto;
+  box-shadow: 0 0 8px rgba(0 0 0 / 20%);
+  .control {
+    position: absolute;
+  }
+
+  .prev {
+    left: 0;
+
+    &:hover > i {
+      transform: translateX(-4px);
+    }
+  }
+
+  .next {
+    right: 0;
+    &:hover > i {
+      transform: translateX(4px);
+    }
+  }
+
+  .prev,
+  .next {
+    top: calc(50% - 50px);
+    transform: translateY(calc(-50%));
+    color: #fff;
+    font-size: 10rem;
+    cursor: pointer;
+
+    > i {
+      transform: translateX(0);
+      transition: all 0.25s ease;
+      will-change: transform;
+    }
+  }
+}
+
+.img-wrap {
+  height: 420px;
+  overflow: hidden;
+
+  & > img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.img-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .img-item {
+    height: 100px;
+    flex: 1;
+    padding: 8px;
+    background-color: #bbb;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    will-change: opacity, background-color;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    // add class active when click img item
+    &.active {
+      background-color: rgb(220, 86, 86);
+    }
+
+    &:hover {
+      opacity: 0.8;
+      background-color: rgb(220, 86, 86);
+    }
+  }
+}
