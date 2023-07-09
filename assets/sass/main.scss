@@ -52,6 +52,7 @@ img {
     transform: translateY(calc(-50%));
     color: #fff;
     font-size: 10rem;
+    z-index: 1;
     cursor: pointer;
 
     > i {
@@ -69,6 +70,15 @@ img {
   & > img {
     object-fit: cover;
     width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

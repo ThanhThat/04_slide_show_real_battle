@@ -30,11 +30,19 @@ next.addEventListener("click", function () {
   } else {
     ++currentIndex;
   }
+
   setImageWrap();
 });
 
 function setImageWrap() {
   imgWrap.src = imgList[currentIndex].src;
+  imgWrap.animate(
+    {
+      opacity: [0, 1],
+      timingFunction: "ease-in",
+    },
+    500
+  );
   $(".img-item.active").classList.remove("active");
   imgList[currentIndex].parentElement.classList.add("active");
 }
